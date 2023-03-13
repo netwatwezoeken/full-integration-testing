@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsApp", "src\ContactsApp\ContactsApp.csproj", "{28BC46C4-5965-4DBE-9343-89C249907B18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0D045B42-2D25-4300-A1F8-975BA04881EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{060457AD-B4EB-4791-AE50-3903375B8637}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullIntegrationTests", "test\FullIntegrationTests\FullIntegrationTests.csproj", "{5C3F27A6-786D-4CD4-AEA6-12F3E3D2933D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28BC46C4-5965-4DBE-9343-89C249907B18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28BC46C4-5965-4DBE-9343-89C249907B18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28BC46C4-5965-4DBE-9343-89C249907B18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28BC46C4-5965-4DBE-9343-89C249907B18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C3F27A6-786D-4CD4-AEA6-12F3E3D2933D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C3F27A6-786D-4CD4-AEA6-12F3E3D2933D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C3F27A6-786D-4CD4-AEA6-12F3E3D2933D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C3F27A6-786D-4CD4-AEA6-12F3E3D2933D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{28BC46C4-5965-4DBE-9343-89C249907B18} = {0D045B42-2D25-4300-A1F8-975BA04881EC}
+		{5C3F27A6-786D-4CD4-AEA6-12F3E3D2933D} = {060457AD-B4EB-4791-AE50-3903375B8637}
+	EndGlobalSection
+EndGlobal
