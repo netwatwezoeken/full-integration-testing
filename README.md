@@ -1,9 +1,7 @@
+This is the source code accompanying https://blog.netwatwezoeken.nl/integration-testing-with-playwright-and-testcontainers/
 
-Blazor app based on https://github.com/dotnet/blazor-samples
-https://github.com/dotnet/blazor-samples/tree/main/6.0/BlazorServerEFCoreSample
-
-The original app is modified for the purpose of this exmaple:
-- Added MS sql database
+[The original app](https://github.com/dotnet/blazor-samples/tree/main/6.0/BlazorServerEFCoreSample) is modified for the purpose of this exmaple:
+- Added MS Sql Server had been added
 - Removed seeding of example data in the application
 
 # Prerequisites
