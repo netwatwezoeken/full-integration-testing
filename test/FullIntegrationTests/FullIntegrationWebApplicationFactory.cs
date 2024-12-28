@@ -12,7 +12,7 @@ using Xunit.Sdk;
 
 namespace FullIntegrationTests;
 
-internal class FullIntegrationWebApplicationFactory : WebApplicationFactory<Program>
+internal class FullIntegrationWebApplicationFactory :Nwwz.Mvc.Testing.WebApplicationFactory<Program>
 {
     public readonly MsSqlContainer DatabaseContainer;
 
@@ -30,23 +30,8 @@ internal class FullIntegrationWebApplicationFactory : WebApplicationFactory<Prog
         }
     }
 
-    protected override IHost CreateHost(IHostBuilder builder)
-    {
-        // need to create a plain host that we can return.
-        var dummyHost = builder.Build();
-
-        // configure and start the actual host.
-        builder.ConfigureWebHost(webHostBuilder => webHostBuilder.UseKestrel());
-
-        var host = builder.Build();
-        host.Start();
-
-        return dummyHost;
-    }
-
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
-        builder.UseUrls("https://localhost:7048");
         builder.UseEnvironment("FullIntegrationTest").ConfigureTestServices(services =>
         {
             Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "FullIntegrationTest");

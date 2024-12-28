@@ -6,9 +6,11 @@ namespace FullIntegrationTests;
 public class Contacts : IClassFixture<TestFixture>
 {
     private readonly IPage? _page;
+    private readonly TestFixture _fixture;
 
     public Contacts(TestFixture fixture)
     {
+        _fixture = fixture;
         _page = fixture.Page;
     }
     
@@ -16,7 +18,7 @@ public class Contacts : IClassFixture<TestFixture>
     public async Task RemoveContact()
     {
         // Go to the page and wait for the loading to complete
-        await _page.GotoAsync("https://localhost:7048/");
+        await _page.GotoAsync(_fixture.ServerAddress);
         await _page.WaitForLoadStateAsync(LoadState.NetworkIdle);
         await _page.Locator(".contact-detail").IsVisibleAsync();
         
