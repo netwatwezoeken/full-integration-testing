@@ -32,7 +32,9 @@ internal class FullIntegrationWebApplicationFactory :Nwwz.Mvc.Testing.WebApplica
 
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
-        builder.UseEnvironment("FullIntegrationTest").ConfigureTestServices(services =>
+        builder.UseEnvironment("FullIntegrationTest")
+            .UseStaticWebAssets() // this makes sure the assest from the ContractApp project are loaded
+            .ConfigureTestServices(services =>
         {
             Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "FullIntegrationTest");
             
