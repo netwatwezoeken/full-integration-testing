@@ -11,6 +11,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{12A0D7C8-0A03-42EB-81FD-C53656ADBB81}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		docker-compose.yml = docker-compose.yml
+		.gitignore = .gitignore
 	EndProjectSection
 EndProject
 Global

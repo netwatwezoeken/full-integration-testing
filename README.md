@@ -2,5 +2,5 @@ This is the source code accompanying https://blog.netwatwezoeken.nl/integration-
 
 # Prerequisites
 - Docker (for Desktop)
-- .NET 9
+- .NET 10
 - Powershell 7

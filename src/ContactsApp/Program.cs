@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using ContactsApp.Components;
 using Microsoft.EntityFrameworkCore;
 using ContactsApp.Data;
 using ContactsApp.Grid;
@@ -7,12 +8,12 @@ using ContactsApp.Grid;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
-builder.Services.AddServerSideBlazor();
+builder.Services.AddRazorComponents()
+    .AddInteractiveServerComponents();
 
 // register factory and configure the options
 builder.Services.AddDbContextFactory<ContactContext>(opt =>
-    opt.UseSqlServer("Server=localhost;Database=myDataBase;User Id=sa;Password=yourStrong(!)Password;"));
+    opt.UseSqlServer("Server=localhost;Database=myDataBase;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True;"));
 
 // pager
 builder.Services.AddScoped<IPageHelper, PageHelper>();
@@ -48,11 +49,10 @@ else
 
 app.UseHttpsRedirection();
 
+app.UseAntiforgery();
+
 app.UseStaticFiles();
-
-app.UseRouting();
-
-app.MapBlazorHub();
-app.MapFallbackToPage("/_Host");
+app.MapRazorComponents<App>()
+    .AddInteractiveServerRenderMode();
 
 app.Run();
