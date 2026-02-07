@@ -12,7 +12,7 @@ using Xunit.Sdk;
 
 namespace FullIntegrationTests;
 
-internal class FullIntegrationWebApplicationFactory :Nwwz.Mvc.Testing.WebApplicationFactory<Program>
+internal class FullIntegrationWebApplicationFactory : WebApplicationFactory<Program>
 {
     public readonly MsSqlContainer DatabaseContainer;
 
@@ -28,6 +28,7 @@ internal class FullIntegrationWebApplicationFactory :Nwwz.Mvc.Testing.WebApplica
         { 
             throw new XunitException($"Is docker installed and running? {ae.Message}.");
         }
+        UseKestrel();
     }
 
     protected override void ConfigureWebHost(IWebHostBuilder builder)

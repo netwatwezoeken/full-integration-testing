@@ -16,7 +16,7 @@ public class TestFixture : IAsyncLifetime
         _factory = new FullIntegrationWebApplicationFactory();
     }
 
-    public string ServerAddress => _factory.ServerAddress;
+    public string ServerAddress => _factory.ClientOptions.BaseAddress.ToString();
 
     public async Task InitializeAsync()
     {
@@ -39,7 +39,7 @@ public class TestFixture : IAsyncLifetime
         });
         Page = await _context.NewPageAsync();
         _factory.CreateClient(
-            new Nwwz.Mvc.Testing.WebApplicationFactoryClientOptions
+            new WebApplicationFactoryClientOptions
             {
                 AllowAutoRedirect = false
             });
