@@ -21,6 +21,12 @@ public class TestFixture : IAsyncLifetime
     public async Task InitializeAsync()
     {
         await _factory.DatabaseContainer.StartAsync();
+        _factory.StartServer();
+        
+        var exitCode = Microsoft.Playwright.Program.Main(new[] { "install" });
+        if (exitCode != 0)
+            throw new Exception("Failed to install playwright");
+        
         _playwright = await Playwright.CreateAsync();
         _browser = await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
         {
